@@ -12,6 +12,11 @@
 ### Matrices
 
 ~~~ python
+    # -- creation matrices -- #
+    np.array([[1,2,3], [4,5,6], [7,8,9]]) #3 x 3 matrix 
+    np.matrix([[1, 2], [3, 4]]) #2 x 2 matrix
+    np.matrix('1 2; 3 4') #2 x 2 matrix
+
     np.eye(3) #3 x 3 identity matrix
 
     np.zeros(2,3) #2 x 3 matrix of zeros
@@ -34,7 +39,6 @@
     G1 = np.linalg.pinv(D) #matrix inverse with moore-penrose (//TODO pesquisar)
 
     # -- matrix concatenation -- #
-
     # When the axis to append is specified, the 
     # matrices/vectors must have the correct shape
     H = np.append([1, 2, 3], A)
@@ -46,6 +50,20 @@
     # print("Append [[4], [7], [10]] to A:")
     # print(H2)
 ~~~
+
+### Matrixes operations
+
+~~~python
+    P = np.array([0, 0, 0, 0, 1],
+    [0, 0, 0.5, 0.5, 0], 
+    [0, 0.5, 0, 0, 0.5], 
+    [0, 0.5, 0, 0, 0.5], 
+    [0, 0, 1, 0, 0],
+    )
+
+    P5 = np.linalg.matrix_power(P,5) #power matrix to 5, must be a square matrix
+~~~
+
 
 ### Indexing matrixes
 
@@ -87,7 +105,7 @@ It is possible to retrieve/slice a part of a matrix.
 trick: `%matplotlib inline` ipython draws the plots immediately after the cell
 
 ~~~python
-    import import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
 
     plt.figure()
     plt.plot(x, y_est)
