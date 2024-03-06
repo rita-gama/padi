@@ -64,7 +64,6 @@
     P5 = np.linalg.matrix_power(P,5) #power matrix to 5, must be a square matrix
 ~~~
 
-
 ### Indexing matrixes
 
 ~~~python
@@ -120,6 +119,12 @@ trick: `%matplotlib inline` ipython draws the plots immediately after the cell
 ~~~
 
 ## Other
+
+### Reading files
+
+~~~ python
+    data = np.load(filename)
+~~~
 
 ### Timing
 
