@@ -6,7 +6,7 @@
     A = np.array([1])
     A.shape
 
-    B = np.arange(1,4, step=1) #vector will all numbers between 1 and 3 = [1 2 3]
+    B = np.arange(1,4, step=1) #vector will  all numbers between 1 and 3 = [1 2 3]
 ~~~
 
 ### Matrices
