@@ -6,39 +6,38 @@
     A = np.array([1])
     A.shape
 
-    B = np.arange(1,4, step=1) #vector will  all numbers between 1 and 3 = [1 2 3]
+    B = np.arange(1,4, step=1) # vector with all the numbers between 1 and 3, i.e., B=[1 2 3]
 ~~~
 
 ### Matrices
 
 ~~~ python
-    # -- creation matrices -- #
-    np.array([[1,2,3], [4,5,6], [7,8,9]]) #3 x 3 matrix 
-    np.matrix([[1, 2], [3, 4]]) #2 x 2 matrix
-    np.matrix('1 2; 3 4') #2 x 2 matrix
+    # -- Matrix creation -- #
+    np.array([[1,2,3], [4,5,6], [7,8,9]])  #3 x 3 matrix 
+    np.matrix([[1, 2], [3, 4]]) # 2 x 2 matrix
+    np.matrix('1 2; 3 4') # 2 x 2 matrix
 
-    np.eye(3) #3 x 3 identity matrix
+    np.eye(3) # 3 x 3 identity matrix
 
-    np.zeros(2,3) #2 x 3 matrix of zeros
+    np.zeros(2,3) # 2 x 3 matrix of zeros
 
-    np.ones(2,3) #2 x 3 matrix of ones
+    np.ones(2,3) # 2 x 3 matrix of ones
 
-    np.random.rand(1000, 1000) #1000 x 1000 matrix with random values
+    np.random.rand(1000, 1000) # 1000 x 1000 matrix with random values
 
-    C = np.diag(B) #diagonal matrix from B
-        # diag can be used to build a diagonal matrix from a vector or extract a diagonal from a matrix
+    C = np.diag(B) #diagonal matrix from B, `.diag` can be used to build a diagonal matrix from a vector or extract a diagonal from a matrix
 
-    D = A + np.eye(3) #sum matrixes
+    D = A + np.eye(3) # sum matrixes
 
-    E = B.T #transpose matrix
+    E = B.T # transpose matrix
 
-    F = np.dot(A, E) #matrix product
+    F = np.dot(A, E) # matrix product
 
-    G = np.linalg.inv(D) #matrix inverse
+    G = np.linalg.inv(D) # matrix inverse
 
-    G1 = np.linalg.pinv(D) #matrix inverse with moore-penrose (//TODO pesquisar)
+    G1 = np.linalg.pinv(D) # matrix inverse with moore-penrose
 
-    # -- matrix concatenation -- #
+    # -- Matrix concatenation -- #
     # When the axis to append is specified, the 
     # matrices/vectors must have the correct shape
     H = np.append([1, 2, 3], A)
@@ -54,24 +53,25 @@
 ### Matrixes operations
 
 ~~~python
-    P = np.array([0, 0, 0, 0, 1],
-    [0, 0, 0.5, 0.5, 0], 
-    [0, 0.5, 0, 0, 0.5], 
-    [0, 0.5, 0, 0, 0.5], 
-    [0, 0, 1, 0, 0],
+    P = np.array(
+        [0, 0, 0, 0, 1],
+        [0, 0, 0.5, 0.5, 0], 
+        [0, 0.5, 0, 0, 0.5], 
+        [0, 0.5, 0, 0, 0.5], 
+        [0, 0, 1, 0, 0],
     )
 
-    P5 = np.linalg.matrix_power(P,5) #power matrix to 5, must be a square matrix
+    P5 = np.linalg.matrix_power(P,5) # must be a square matrix
 ~~~
 
 ### Indexing matrixes
 
 ~~~python
-    A[0] #row 0
-    A[1,2] #most efficient(not completely sure) to retrieve a value
+    A[0] # row 0
+    A[1,2] # retrieve a value
 
     I = np.arange(10, 1, -1)
-    #we can also index using a
+    # we can also index using a
 
     #1. a list
     print("I[[3, 3, 1, 8]]:", I[[3, 3, 1, 8]]) # >> [7 7 9 2]
@@ -81,8 +81,6 @@
 
     #3.2D np.array
     print("I[np.array([[1, 1], [2, 3]])]:", I[np.array([[1, 1], [2, 3]])]) # >> [[9 9]  [8 7]]
-
-
 ~~~
 
 ### Slicing matrixes
@@ -101,21 +99,19 @@ It is possible to retrieve/slice a part of a matrix.
 
 ## Plotting
 
-trick: `%matplotlib inline` ipython draws the plots immediately after the cell
-
 ~~~python
     import matplotlib.pyplot as plt
 
     plt.figure()
     plt.plot(x, y_est)
-    plt.plot(x, y, 'x') #displaying values as 'x'
+    plt.plot(x, y, 'x') # displaying values as 'x'
 
     plt.xlabel('Input X')
     plt.ylabel('Output Y')
 
     plt.title('Linear regression')
 
-    plt.subplot(nrows=1, ncols=2, 1) #this plot is the first plot
+    plt.subplot(nrows=1, ncols=2, 1) # this plot is the first plot
 ~~~
 
 ## Other
@@ -128,7 +124,7 @@ trick: `%matplotlib inline` ipython draws the plots immediately after the cell
 
 ### Timing
 
-timing execution time:
+Execution time:
 
 ~~~python
     import time
@@ -140,7 +136,7 @@ timing execution time:
 
 ### Bounds
 
-Upperbound values numpy array `np.clip` <https://www.skytowner.com/explore/limiting_array_values_to_a_certain_range_in_numpy> (//TODO not sure if it the best way or if exists an efficient one)
+Upperbound values numpy array `np.clip`. Example  [here](https://www.skytowner.com/explore/limiting_array_values_to_a_certain_range_in_numpy>).
 
 ### Random
 
